@@ -1,7 +1,7 @@
 #include <climits>
 #include <cstdlib>
 #include <iostream>
-// TODO: #include <memory>
+#include <memory>
 #include <stdexcept>
 #include <string>
 
@@ -16,7 +16,7 @@
 #include <boost/log/utility/setup/console.hpp>
 #include <boost/log/utility/setup/file.hpp>
 
-// TODO: #include "proxy/proxy.hpp"
+#include "proxy/proxy.hpp"
 
 namespace {
     void initLog();
@@ -30,8 +30,8 @@ int main(int argc, char **argv) {
     unsigned short port = getPort(argc, argv);
     BOOST_LOG_TRIVIAL(info) << "Using port: " << port;
 
-    // TODO: auto proxyInstance = std::make_unique<proxy::Proxy>(port);
-    // TODO: proxyInstance->start();
+    auto proxyInstance = std::make_unique<proxy::Proxy>(port);
+    proxyInstance->start();
 
     return EXIT_SUCCESS;
 }
