@@ -12,7 +12,12 @@ if (NOT Boost_FOUND)
     message(FATAL_ERROR "Boost libraries not found")
 endif ()
 
-add_executable(${PROJECT_NAME} ${SRC_DIR}/main.cpp ${SRC_DIR}/proxy/proxy.cpp)
+add_executable(${PROJECT_NAME}
+        ${SRC_DIR}/main.cpp
+        ${SRC_DIR}/proxy/proxy.cpp
+        ${SRC_DIR}/proxy/session/session.cpp
+        ${SRC_DIR}/proxy/utils/utils.cpp
+)
 
 target_include_directories(${PROJECT_NAME} PRIVATE ${SRC_DIR})
 target_link_libraries(${PROJECT_NAME} PRIVATE Boost::log Boost::log_setup Boost::system Boost::filesystem)
