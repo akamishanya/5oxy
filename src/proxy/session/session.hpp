@@ -19,7 +19,7 @@ namespace proxy::session {
         std::vector<proxy::utils::byte> serverBuffer;
 
     public:
-        Session(boost::asio::io_context &ioContext, boost::asio::ip::tcp::socket clientSocket);
+        Session(boost::asio::io_context &ioContext, boost::asio::ip::tcp::socket &&clientSocket);
 
         void start();
 
