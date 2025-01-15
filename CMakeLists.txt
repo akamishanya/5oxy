@@ -7,7 +7,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 set(SRC_DIR src)
 
-find_package(Boost 1.86.0 REQUIRED COMPONENTS log log_setup system filesystem)
+find_package(Boost 1.87.0 REQUIRED COMPONENTS log log_setup system filesystem)
 if (NOT Boost_FOUND)
     message(FATAL_ERROR "Boost libraries not found")
 endif ()
