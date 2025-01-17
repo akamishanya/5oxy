@@ -38,20 +38,16 @@ int main(int argc, char **argv) {
 
 namespace {
     void initLog() {
-        // Логирование в консоль
         boost::log::add_console_log(std::cout, boost::log::keywords::format = "%Severity% | %TimeStamp%: %Message%");
 
-        // Логирование в файл
         boost::log::add_file_log(
             boost::log::keywords::file_name = "/tmp/5oxy/log/%N.log",
-            boost::log::keywords::rotation_size = 10 * 1024 * 1024, // 10 МБ
+            boost::log::keywords::rotation_size = 10 * 1024 * 1024,
             boost::log::keywords::format = "%Severity% | %TimeStamp%: %Message%"
         );
 
-        // Добавление атрибутов времени
         boost::log::add_common_attributes();
 
-        // Фильтрация сообщений
         boost::log::core::get()->set_filter(boost::log::trivial::severity >= boost::log::trivial::info);
     }
 
